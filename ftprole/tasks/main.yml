@@ -4,10 +4,14 @@
      name: vsftpd
      state: present
 
-  - name: copy config file 
+   
     template:
       src: templates/vsftpdconfig.j2
       dest: /etc/ansible.conf
+
+    user:
+     name: devops
+     password: devopsftp  
 
   
     service:
@@ -15,6 +19,3 @@
      state: started
      enabled: yes
 
-    user:
-     name: devops
-     password: devopsftp
