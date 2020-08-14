@@ -10,9 +10,8 @@
       dest: /etc/ansible.conf
 
 - name: Service start  
-  sysctl:
+  service:
       name: vsftpd
-      value: 5
-      state: present
+      state: started
       
 
