@@ -1,2 +1,20 @@
 ---
-# tasks file for ftprole
+  - name: install vsftpd
+    apt:
+     name: vsftpd
+     state: present
+
+  - name: copy config file 
+    template:
+      src: templates/vsftpdconfig.j2
+      dest: /etc/ansible.conf
+
+  - name: start the vsftpd  
+    service:
+     name: vsftpd
+     state: started
+     enabled: yes
+
+    user:
+     name: devops
+     password: devopsftp
