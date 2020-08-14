@@ -5,7 +5,7 @@
       state: present
 
    
-  template:
+  copy:
       src: templates/vsftpdconfig.j2
       dest: /etc/ansible.conf
 
