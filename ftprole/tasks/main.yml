@@ -1,21 +1,21 @@
 ---
-  - name: install vsftpd
-    apt:
-     name: vsftpd
-     state: present
+- name: Install Vsftpd
+  apt:
+      name: vsftpd
+      state: present
 
    
-    template:
+  template:
       src: templates/vsftpdconfig.j2
       dest: /etc/ansible.conf
 
-    user:
-     name: devops
-     password: devopsftp  
+  user:
+      name: devops
+      password: devopsftp  
 
   
-    service:
-     name: vsftpd
-     state: started
-     enabled: yes
+  service:
+      name: vsftpd
+      state: started
+      enabled: yes
 
