@@ -13,5 +13,10 @@
   service:
       name: vsftpd
       state: started
+
+- name: Assign authentication
+  user: 
+      name: devops
+      password: devopsftp
       
 
