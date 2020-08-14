@@ -9,10 +9,6 @@
       src: templates/vsftpdconfig.j2
       dest: /etc/ansible.conf
 
-  user:
-      name: devops
-      password: devopsftp  
-
   
   service:
       name: vsftpd
