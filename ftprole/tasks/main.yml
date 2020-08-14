@@ -9,7 +9,7 @@
       src: templates/vsftpdconfig.j2
       dest: /etc/ansible.conf
 
-  - name: start the vsftpd  
+  
     service:
      name: vsftpd
      state: started
